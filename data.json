@@ -1,0 +1,41 @@
+{
+  "settings": {
+    "heroType": "image",
+    "heroUrl": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000"
+  },
+  "users": [
+    {
+      "id": "admin_01",
+      "email": "admin@lawvita.com",
+      "password": "admin123",
+      "name": "Admin",
+      "isAdmin": true
+    },
+    {
+      "id": "1765797490312",
+      "email": "aadigupta360@gmail.com",
+      "name": "Aaditya Gupta",
+      "phone": "08171513141",
+      "address": "D-52, Alliance Kingstone Estate",
+      "isAdmin": false,
+      "isBanned": false,
+      "cart": [],
+      "purchasedNotes": [
+        1765797546614
+      ],
+      "otp": null
+    }
+  ],
+  "notes": [
+    {
+      "id": 1765797546614,
+      "title": "Trial",
+      "category": "Civil Law",
+      "price": "0",
+      "fileType": "file",
+      "fileLink": "#",
+      "fileName": "1765797546611-Evaluation.pdf"
+    }
+  ],
+  "gallery": []
+}

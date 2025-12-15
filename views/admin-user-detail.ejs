@@ -1,0 +1,37 @@
+
+<%- include('header') %>
+<div class="max-w-4xl mx-auto px-4">
+    <a href="/admin/dashboard" class="text-gray-400 hover:text-white mb-4 block">&larr; Back to Dashboard</a>
+    
+    <div class="glass p-8 mb-8 flex justify-between items-start">
+        <div>
+            <h1 class="text-3xl font-bold mb-1"><%= student.name %></h1>
+            <p class="text-gray-400"><%= student.email %></p>
+            <div class="mt-4">
+                <span class="text-xs font-bold px-2 py-1 rounded <%= student.isBanned ? 'bg-red-500 text-white' : 'bg-green-500 text-black' %>">
+                    <%= student.isBanned ? 'ACCOUNT BANNED' : 'ACTIVE ACCOUNT' %>
+                </span>
+            </div>
+        </div>
+        <a href="/admin/ban-user/<%= student.id %>" class="btn btn-danger">
+            <%= student.isBanned ? 'Unban Account' : 'Ban Account Globally' %>
+        </a>
+    </div>
+
+    <h2 class="text-xl font-bold mb-4">Purchased Content (Individual Access)</h2>
+    <% if (studentNotes.length === 0) { %>
+        <p class="text-gray-500">No notes purchased.</p>
+    <% } else { %>
+        <div class="space-y-3">
+            <% studentNotes.forEach(n => { %>
+                <div class="glass p-4 flex justify-between items-center">
+                    <span><%= n.title %></span>
+                    <a href="/admin/revoke/<%= student.id %>/<%= n.id %>" class="text-red-400 hover:text-red-300 text-sm font-bold border border-red-500/50 px-3 py-1 rounded hover:bg-red-500/20">
+                        Revoke Access
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
+<%- include('footer') %>
