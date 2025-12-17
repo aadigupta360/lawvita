@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: lawvita-web
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: SHEETDB_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true

@@ -1,1 +1,22 @@
-<%- include('header') %><div class="max-w-md mx-auto glass p-8 mt-10"><h2 class="text-2xl font-bold mb-6 text-center">Login</h2><% if(msg){ %><p class="text-red-400 text-center mb-4"><%= msg %></p><% } %><form action="/student-auth" method="POST" class="space-y-4"><input type="hidden" name="type" value="login"><input type="email" name="email" placeholder="Email" class="glass-input" required><button class="w-full btn btn-primary">Login</button></form><div class="mt-4 text-center text-sm text-gray-400">New? <a href="/register" class="text-pink-400 hover:underline">Create Account</a></div></div><%- include('footer') %>
+
+<%- include('header') %>
+<div class="max-w-md mx-auto glass p-8 mt-10">
+    <h2 class="text-2xl font-bold mb-6 text-center">Student Login</h2>
+    <% if(msg){ %><p class="text-red-400 text-center mb-4"><%= msg %></p><% } %>
+    <form action="/student-auth" method="POST" class="space-y-4">
+        <input type="hidden" name="type" value="login">
+        <div>
+            <label class="text-xs text-gray-400 ml-1">Email</label>
+            <input type="email" name="email" class="glass-input mt-1" required>
+        </div>
+        <div>
+            <label class="text-xs text-gray-400 ml-1">Password</label>
+            <input type="password" name="password" class="glass-input mt-1" required>
+        </div>
+        <button class="w-full btn btn-primary mt-2">Access Account</button>
+    </form>
+    <div class="mt-4 text-center text-sm text-gray-400">
+        New here? <a href="/register" class="text-pink-400 hover:underline">Create Account</a>
+    </div>
+</div>
+<%- include('footer') %>
